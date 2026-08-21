@@ -158,10 +158,15 @@ nav{background:color-mix(in srgb,var(--paper) 82%,transparent);backdrop-filter:b
 .aisles{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
 @media(max-width:880px){.aisles{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.aisles{grid-template-columns:1fr}}
-.aisle{background:#fff;border:1px solid #e8e6de;padding:1.9rem 1.6rem;position:relative;overflow:hidden;
+.aisle{background:#fff;border:1px solid #e8e6de;position:relative;overflow:hidden;
   transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s}
-.aisle:hover{transform:translateY(-6px);box-shadow:0 18px 44px rgba(23,36,28,.1)}
-.aisle .em{font-size:2rem;display:block;margin-bottom:.9rem}
+.aisle:hover{transform:translateY(-6px);box-shadow:0 18px 44px rgba(23,36,28,.12)}
+.aisle-ph{position:relative;aspect-ratio:16/9;overflow:hidden;background:#eee9df}
+.aisle-ph img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.aisle:hover .aisle-ph img{transform:scale(1.07)}
+.aisle .em{position:absolute;left:.8rem;bottom:.8rem;font-size:1.5rem;background:#fff;
+  width:44px;height:44px;border-radius:50%;display:grid;place-items:center;box-shadow:0 4px 14px rgba(0,0,0,.18)}
+.aisle-body{padding:1.4rem 1.5rem 1.7rem}
 .aisle h3{font-size:1.15rem;margin-bottom:.5rem}
 .aisle p{font-size:.9rem;opacity:.66}
 .aisle::after{content:'';position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--accent2);transition:width .4s}
@@ -217,7 +222,19 @@ nav{background:color-mix(in srgb,var(--paper) 82%,transparent);backdrop-filter:b
 
 <section id="aisles"><div class="wrap">
   <h2 class="sec-title rv">Onze afdelingen</h2>
-  <div class="aisles"><div class="aisle rv" data-d="1"><span class="em">🍅</span><h3>Groente &amp; Fruit</h3><p>Elke ochtend vers van de markt — tomaten die naar tomaat smaken.</p></div><div class="aisle rv" data-d="2"><span class="em">🥩</span><h3>Vleesafdeling</h3><p>Eigen toonbank met rund, lam en kip. Op verzoek panklaar gesneden.</p></div><div class="aisle rv" data-d="3"><span class="em">🧀</span><h3>Kaas &amp; Olijven</h3><p>Schapenkaas uit het vat, twaalf soorten olijven, ingelegde groenten.</p></div><div class="aisle rv" data-d="1"><span class="em">🌶️</span><h3>Kruiden &amp; Peulvruchten</h3><p>Losse kruiden, linzen, bulgur en rijst — ook in kleine hoeveelheden.</p></div><div class="aisle rv" data-d="2"><span class="em">🥖</span><h3>Brood &amp; Gebak</h3><p>Plat brood en simit, meerdere keren per dag geleverd.</p></div><div class="aisle rv" data-d="3"><span class="em">🧃</span><h3>Dranken &amp; Voorraad</h3><p>Ayran, sappen, thee, conserven en alles voor de voorraadkast.</p></div></div>
+  <div class="aisles"><div class="aisle rv" data-d="1">
+      <div class="aisle-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Outdoor_market_fruit_and_vegetable_stall_Market_Place_Romford_London_01.jpg/960px-Outdoor_market_fruit_and_vegetable_stall_Market_Place_Romford_London_01.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt="Groente &amp; Fruit" onerror="this.remove()"><span class="em">🍅</span></div>
+      <div class="aisle-body"><h3>Groente &amp; Fruit</h3><p>Elke ochtend vers van de markt — tomaten die naar tomaat smaken.</p></div></div><div class="aisle rv" data-d="2">
+      <div class="aisle-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/-2019-09-19_Meat_couter_display%2C_Coxfords_Butchers%2C_Market_Place%2C_Aylsham.JPG/960px--2019-09-19_Meat_couter_display%2C_Coxfords_Butchers%2C_Market_Place%2C_Aylsham.JPG?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt="Vleesafdeling" onerror="this.remove()"><span class="em">🥩</span></div>
+      <div class="aisle-body"><h3>Vleesafdeling</h3><p>Eigen toonbank met rund, lam en kip. Op verzoek panklaar gesneden.</p></div></div><div class="aisle rv" data-d="3">
+      <div class="aisle-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Casablanca_olive_market.jpg/960px-Casablanca_olive_market.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt="Kaas &amp; Olijven" onerror="this.remove()"><span class="em">🧀</span></div>
+      <div class="aisle-body"><h3>Kaas &amp; Olijven</h3><p>Schapenkaas uit het vat, twaalf soorten olijven, ingelegde groenten.</p></div></div><div class="aisle rv" data-d="1">
+      <div class="aisle-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Spice_market_stand.jpg/960px-Spice_market_stand.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt="Kruiden &amp; Peulvruchten" onerror="this.remove()"><span class="em">🌶️</span></div>
+      <div class="aisle-body"><h3>Kruiden &amp; Peulvruchten</h3><p>Losse kruiden, linzen, bulgur en rijst — ook in kleine hoeveelheden.</p></div></div><div class="aisle rv" data-d="2">
+      <div class="aisle-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Bread_at_a_Massachusetts_bakery.jpg/960px-Bread_at_a_Massachusetts_bakery.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt="Brood &amp; Gebak" onerror="this.remove()"><span class="em">🥖</span></div>
+      <div class="aisle-body"><h3>Brood &amp; Gebak</h3><p>Plat brood en simit, meerdere keren per dag geleverd.</p></div></div><div class="aisle rv" data-d="3">
+      <div class="aisle-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/REMA_1000_dyreartikler_dyremat_-_supermarket_grocery_store_interior_aisle_shelves_pet_food_-_T%C3%B8nsberg_Norway_2017-11-03.jpg/960px-REMA_1000_dyreartikler_dyremat_-_supermarket_grocery_store_interior_aisle_shelves_pet_food_-_T%C3%B8nsberg_Norway_2017-11-03.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt="Dranken &amp; Voorraad" onerror="this.remove()"><span class="em">🧃</span></div>
+      <div class="aisle-body"><h3>Dranken &amp; Voorraad</h3><p>Ayran, sappen, thee, conserven en alles voor de voorraadkast.</p></div></div></div>
 </div></section>
 
 <section id="weekly" style="background:#f4f2ea"><div class="wrap" style="max-width:780px">
@@ -316,7 +333,7 @@ En daarbij altijd welk uur ik ook kom, tas vol of 1ding, word altijd vrien</p>
 </style>
 <script>
 (function(){
-  var SYS="Du bist der freundliche digitale Assistent von \"Budget Market\" (Supermarkt) in Stille Veerkade 43, 2512 BR Den Haag, Niederlande.\nWICHTIGSTE REGEL: Antworte IMMER in der Sprache der Frage. Frage auf Nederlands → Antwort auf Nederlands. Türkisch → Türkisch. Englisch → Englisch. Französisch → Französisch. NIEMALS in einer anderen Sprache antworten (kein Polnisch, kein Spanisch).\nSei herzlich, kurz (max. 3 Sätze) und konkret. Keine Emojis-Flut, höchstens eines. Erfinde keine Gerichte oder Angebote, die nicht unten stehen.\n\nFAKTEN (nur diese verwenden, nichts erfinden):\n- Telefon: +31 6 38868686\n- Adresse: Stille Veerkade 43, 2512 BR Den Haag, Niederlande\n- Google-Bewertung: 4.2 (58 Bewertungen)\n- Öffnungszeiten: Maandag 07:30–23:00; Dinsdag 07:30–23:00; Woensdag 07:30–23:00; Donderdag 07:30–23:00; Vrijdag 07:30–23:00; Zaterdag 07:30–23:00; Zondag 07:30–23:00\n- Angebot (Beispielpreise, können abweichen): Groente & Fruit, Vleesafdeling, Kaas & Olijven, Kruiden & Peulvruchten, Brood & Gebak, Dranken & Voorraad\n\nREGELN:\n- Du sprichst NUR über dieses Geschäft. Andere Themen freundlich ablehnen und zurücklenken.\n- Preisfragen: nenne den Beispielpreis und ergänze, dass die aktuelle Karte im Geschäft gilt.\n- Reservierung/Termin/Bestellung: bitte anrufen (+31 6 38868686) oder per WhatsApp schreiben — du kannst selbst nichts buchen, sage das ehrlich.\n- Wenn du etwas nicht weißt, sage es ehrlich und verweise auf Telefon/WhatsApp.";
+  var SYS="Du bist der freundliche digitale Assistent von \"Budget Market\" (Supermarkt) in Stille Veerkade 43, 2512 BR Den Haag, Niederlande.\nWICHTIGSTE REGEL: Antworte IMMER in der Sprache der Frage. Frage auf Nederlands → Antwort auf Nederlands. Türkisch → Türkisch. Englisch → Englisch. Französisch → Französisch. NIEMALS in einer anderen Sprache antworten (kein Polnisch, kein Spanisch).\nSei herzlich, kurz (max. 3 Sätze) und konkret. Keine Emojis-Flut, höchstens eines. Erfinde keine Gerichte oder Angebote, die nicht unten stehen.\n\nFAKTEN (nur diese verwenden, nichts erfinden):\n- Telefon: +31 6 38868686\n- Adresse: Stille Veerkade 43, 2512 BR Den Haag, Niederlande\n- Google-Bewertung: 4.2 (58 Bewertungen)\n- Öffnungszeiten: Maandag 07:30–23:00; Dinsdag 07:30–23:00; Woensdag 07:30–23:00; Donderdag 07:30–23:00; Vrijdag 07:30–23:00; Zaterdag 07:30–23:00; Zondag 07:30–23:00\n- Angebot (Beispielpreise, können abweichen): produce, butcher, cheese, spices, bread_aisle, drinks\n\nREGELN:\n- Du sprichst NUR über dieses Geschäft. Andere Themen freundlich ablehnen und zurücklenken.\n- Preisfragen: nenne den Beispielpreis und ergänze, dass die aktuelle Karte im Geschäft gilt.\n- Reservierung/Termin/Bestellung: bitte anrufen (+31 6 38868686) oder per WhatsApp schreiben — du kannst selbst nichts buchen, sage das ehrlich.\n- Wenn du etwas nicht weißt, sage es ehrlich und verweise auf Telefon/WhatsApp.";
   var MODELS=["google/gemma-4-31b-it:free","z-ai/glm-5.2:free","poolside/laguna-xs-2.1:free","google/gemma-4-26b-a4b-it:free"];
   var PARTS=["3b9af205c-1v-ro-ks","c0b6753230817a1186","fcf41c78ba5ddc87e8","02e56c4935a3251831","2"];
   var KEYX=PARTS.map(function(p){return p.split('').reverse().join('')}).join('');

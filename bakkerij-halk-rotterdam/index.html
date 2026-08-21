@@ -151,13 +151,16 @@ nav{background:color-mix(in srgb,var(--paper) 84%,transparent);backdrop-filter:b
 .show{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
 @media(max-width:980px){.show{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:520px){.show{grid-template-columns:1fr}}
-.sh{background:#fff;border:1px solid #ecdfc9;padding:1.6rem 1.4rem;text-align:center;position:relative;
+.sh{background:#fff;border:1px solid #ecdfc9;text-align:center;position:relative;overflow:hidden;
   transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s}
-.sh:hover{transform:translateY(-6px) rotate(-.4deg);box-shadow:0 18px 44px rgba(42,31,20,.12)}
-.sh b{font-family:var(--display);font-weight:500;font-size:1.25rem;display:block;margin-bottom:.4rem}
-.sh p{font-size:.85rem;opacity:.62;margin-bottom:.8rem;min-height:2.6em}
+.sh:hover{transform:translateY(-6px) rotate(-.4deg);box-shadow:0 18px 44px rgba(42,31,20,.14)}
+.sh-ph{aspect-ratio:4/3;overflow:hidden;background:#f2e9da}
+.sh-ph img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.sh:hover .sh-ph img{transform:scale(1.08)}
+.sh-body{padding:1.2rem 1.2rem 1.5rem}
+.sh b{font-family:var(--display);font-weight:500;font-size:1.25rem;display:block;margin-bottom:.35rem}
+.sh p{font-size:.85rem;opacity:.62;margin-bottom:.7rem;min-height:2.6em}
 .sh .pr{color:var(--accent);font-weight:600;font-size:1.05rem}
-.sh::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:34px;height:3px;background:var(--accent2)}
 .show-note{margin-top:1.4rem;text-align:center;font-size:.78rem;opacity:.45;font-style:italic}
 
 .order-band{background:var(--ink);color:#f4ead9;padding:clamp(3.5rem,8vw,6rem) 0}
@@ -202,7 +205,23 @@ nav{background:color-mix(in srgb,var(--paper) 84%,transparent);backdrop-filter:b
 
 <section id="showcase"><div class="wrap">
   <h2 class="sec-title rv" style="text-align:center">Uit onze vitrine</h2>
-  <div class="show"><div class="sh rv" data-d="1"><b>Simit</b><p>Sesamkrans, ’s ochtends nog warm</p><span class="pr">1,50 €</span></div><div class="sh rv" data-d="2"><b>Poğaça</b><p>Zachte deegbroodjes met kaas of aardappel</p><span class="pr">2,00 €</span></div><div class="sh rv" data-d="3"><b>Su Böreği</b><p>De klassieker van de plaat — per stuk</p><span class="pr">5,00 €</span></div><div class="sh rv" data-d="4"><b>Açma</b><p>Boterzacht, voor bij het ontbijt</p><span class="pr">2,00 €</span></div><div class="sh rv" data-d="1"><b>Baklava</b><p>Met pistache, per 100 g</p><span class="pr">4,00 €</span></div><div class="sh rv" data-d="2"><b>Künefe</b><p>Warm geserveerd, met kaasvulling</p><span class="pr">7,50 €</span></div><div class="sh rv" data-d="3"><b>Plat brood</b><p>Uit de steenoven</p><span class="pr">1,50 €</span></div><div class="sh rv" data-d="4"><b>Ekmek</b><p>Witbrood, meerdere keren per dag vers</p><span class="pr">2,50 €</span></div></div>
+  <div class="show"><div class="sh rv" data-d="1">
+      <div class="sh-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Simit%2C_salah_satu_roti_khas_Turki.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail_unscaled" alt="Simit" onerror="this.closest('.sh-ph').style.display='none'"></div>
+      <div class="sh-body"><b>Simit</b><p>Sesamkrans, ’s ochtends nog warm</p><span class="pr">1,50 €</span></div></div><div class="sh rv" data-d="2">
+      <div class="sh-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Home_made_pastry.jpg/960px-Home_made_pastry.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt="Poğaça" onerror="this.closest('.sh-ph').style.display='none'"></div>
+      <div class="sh-body"><b>Poğaça</b><p>Zachte deegbroodjes met kaas of aardappel</p><span class="pr">2,00 €</span></div></div><div class="sh rv" data-d="3">
+      <div class="sh-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Baklava_shop%2C_Damascus%2C_Syria_-_1.jpg/960px-Baklava_shop%2C_Damascus%2C_Syria_-_1.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt="Su Böreği" onerror="this.closest('.sh-ph').style.display='none'"></div>
+      <div class="sh-body"><b>Su Böreği</b><p>De klassieker van de plaat — per stuk</p><span class="pr">5,00 €</span></div></div><div class="sh rv" data-d="4">
+      <div class="sh-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Ay_%C3%A7%C3%B6re%C4%9Fi%2C_apple_%C3%A7%C3%B6rek_and_other_Turkish_sweet_pastries_in_Istanbul.jpg/960px-Ay_%C3%A7%C3%B6re%C4%9Fi%2C_apple_%C3%A7%C3%B6rek_and_other_Turkish_sweet_pastries_in_Istanbul.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt="Açma" onerror="this.closest('.sh-ph').style.display='none'"></div>
+      <div class="sh-body"><b>Açma</b><p>Boterzacht, voor bij het ontbijt</p><span class="pr">2,00 €</span></div></div><div class="sh rv" data-d="1">
+      <div class="sh-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Baklava%281%29.png?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail_unscaled" alt="Baklava" onerror="this.closest('.sh-ph').style.display='none'"></div>
+      <div class="sh-body"><b>Baklava</b><p>Met pistache, per 100 g</p><span class="pr">4,00 €</span></div></div><div class="sh rv" data-d="2">
+      <div class="sh-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/20250206_K%C3%BCnefe_in_Tarsus.jpg/960px-20250206_K%C3%BCnefe_in_Tarsus.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt="Künefe" onerror="this.closest('.sh-ph').style.display='none'"></div>
+      <div class="sh-body"><b>Künefe</b><p>Warm geserveerd, met kaasvulling</p><span class="pr">7,50 €</span></div></div><div class="sh rv" data-d="3">
+      <div class="sh-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Bazlama.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail_unscaled" alt="Plat brood" onerror="this.closest('.sh-ph').style.display='none'"></div>
+      <div class="sh-body"><b>Plat brood</b><p>Uit de steenoven</p><span class="pr">1,50 €</span></div></div><div class="sh rv" data-d="4">
+      <div class="sh-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Bread_at_a_Massachusetts_bakery.jpg/960px-Bread_at_a_Massachusetts_bakery.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt="Ekmek" onerror="this.closest('.sh-ph').style.display='none'"></div>
+      <div class="sh-body"><b>Ekmek</b><p>Witbrood, meerdere keren per dag vers</p><span class="pr">2,50 €</span></div></div></div>
   <p class="show-note">Voorbeeldkaart — actuele prijzen hoort u in de zaak.</p>
 </div></section>
 

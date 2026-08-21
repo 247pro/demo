@@ -150,6 +150,18 @@ h1,h2,h3{font-weight:500}
 .cta{display:flex;gap:.8rem;flex-wrap:wrap}
 .hr-line{width:56px;height:1px;background:var(--accent2);margin-bottom:1.6rem}
 
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:clamp(2.5rem,6vw,4.5rem)}
+@media(max-width:760px){.trio{grid-template-columns:1fr}}
+.tr-card{position:relative;aspect-ratio:4/5;overflow:hidden;background:#1c1a1f}
+.tr-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  filter:grayscale(.35) contrast(1.05);transition:transform .8s cubic-bezier(.2,.8,.2,1),filter .5s}
+.tr-card:hover img{transform:scale(1.06);filter:grayscale(0) contrast(1.02)}
+.tr-card::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(10,9,12,.92) 100%)}
+.tr-txt{position:absolute;left:1.3rem;right:1.3rem;bottom:1.2rem;z-index:2}
+.tr-txt b{font-family:var(--display);font-size:1.6rem;font-weight:500;color:#fff;display:block}
+.tr-txt span{font-size:.82rem;opacity:.75;color:#fff}
+.tr-line{width:34px;height:2px;background:var(--accent2);margin-bottom:.6rem}
+
 /* FİYAT LİSTESİ — berber duvarındaki tarife gibi */
 .price-wrap{max-width:760px;margin:0 auto}
 .price{display:flex;align-items:baseline;gap:.8rem;padding:1.15rem .2rem;
@@ -199,6 +211,13 @@ h1,h2,h3{font-weight:500}
 
 <section id="services"><div class="wrap">
   <h2 class="sec-title rv" style="text-align:center">Leistungen & Preise</h2>
+  <div class="trio"><div class="tr-card rv" data-d="1">
+      <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/USS_Theodore_Roosevelt_operations_150701-N-ZZ999-009.jpg/960px-USS_Theodore_Roosevelt_operations_150701-N-ZZ999-009.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt="Schnitt" onerror="this.remove()">
+      <div class="tr-txt"><div class="tr-line"></div><b>Schnitt</b><span>Präzise, mit Schere und Maschine</span></div></div><div class="tr-card rv" data-d="2">
+      <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Barber_trimming_a_customer%27s_beard_in_Kenya.jpg/960px-Barber_trimming_a_customer%27s_beard_in_Kenya.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt="Bart" onerror="this.remove()">
+      <div class="tr-txt"><div class="tr-line"></div><b>Bart</b><span>Kontur, Trimmen, heißes Tuch</span></div></div><div class="tr-card rv" data-d="3">
+      <img loading="lazy" src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWlIScxoWDmiAUJQx-uWwX6uEQNtdmWOWzZFVv-n-7rhlwpCuuJe9Kp72cLQv6sfyQbzg-5SxLqjifcWe2_BdZT8A3bXne5k4Wi7OPdg-zQq1Y-X2MguIxYSAgEDZZxw4_mbE15Y=w900-k-no" alt="Rasur" onerror="this.remove()">
+      <div class="tr-txt"><div class="tr-line"></div><b>Rasur</b><span>Klassisch, mit Messer und Ruhe</span></div></div></div>
   <div class="price-wrap">
     <div class="price rv" data-d="1">
       <div class="price-row"><b>Herrenhaarschnitt</b><span class="dots"></span><span class="pr">21,50 €</span>

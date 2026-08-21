@@ -161,12 +161,16 @@ footer.site{background:#0b0a08}
 .menu-pane.on{display:grid;animation:mfade .5s ease}
 @keyframes mfade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 @media(max-width:820px){.menu-pane{grid-template-columns:1fr}}
-.mi{display:flex;align-items:baseline;gap:.6rem;padding:.85rem 0;border-bottom:1px solid rgba(255,255,255,.08)}
-.mi b{font-family:var(--display);font-weight:400;font-size:1.08rem;white-space:nowrap}
-.mi .dots{flex:1;border-bottom:1px dotted rgba(255,255,255,.25);transform:translateY(-4px)}
+.mi{display:flex;align-items:center;gap:1rem;padding:.8rem 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.mi-img{width:84px;height:84px;object-fit:cover;border-radius:10px;flex:none;
+  box-shadow:0 6px 18px rgba(0,0,0,.35);transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.mi:hover .mi-img{transform:scale(1.06) rotate(-1deg)}
+.mi-body{flex:1;min-width:0}
+.mi b{font-family:var(--display);font-weight:400;font-size:1.1rem}
+.mi .dots{flex:1;border-bottom:1px dotted rgba(255,255,255,.25);transform:translateY(-4px);min-width:24px}
 .mi .pr{color:var(--accent2);font-weight:500;white-space:nowrap}
-.mi small{display:block;flex-basis:100%;opacity:.55;font-size:.84rem;margin-top:-.4rem;padding-bottom:.2rem}
-.mi-row{display:flex;flex-wrap:wrap;align-items:baseline;gap:.6rem}
+.mi small{display:block;opacity:.55;font-size:.84rem;margin-top:.15rem}
+.mi-row{display:flex;align-items:baseline;gap:.6rem}
 .menu-note{margin-top:1.6rem;font-size:.78rem;opacity:.45;font-style:italic}
 
 .story{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,6vw,5rem);align-items:center}
@@ -230,63 +234,109 @@ footer.site{background:#0b0a08}
   <h2 class="sec-title rv">Menukaart</h2>
   <div class="menu-tabs rv" data-d="1"><button class="menu-tab on" data-pane="grill">Van de houtskoolgrill</button><button class="menu-tab" data-pane="doner">Döner &amp; Dürüm</button><button class="menu-tab" data-pane="pide">Pide &amp; Lahmacun</button><button class="menu-tab" data-pane="meze">Voorgerechten &amp; Mezze</button><button class="menu-tab" data-pane="dessert">Desserts</button><button class="menu-tab" data-pane="drinks">Dranken</button></div>
   <div class="menu-pane on" id="pane-grill">
-    <div class="mi"><div class="mi-row" style="width:100%">
-      <b>Adana Kebap</b><span class="dots"></span><span class="pr">16,50 €</span>
-      <small>Pittig gehakt van de houtskoolgrill, met bulgur en gegrilde groente</small></div></div><div class="mi"><div class="mi-row" style="width:100%">
-      <b>Urfa Kebap</b><span class="dots"></span><span class="pr">16,50 €</span>
-      <small>Zoals Adana, maar mild — voor wie het zachter wil</small></div></div><div class="mi"><div class="mi-row" style="width:100%">
-      <b>Tavuk Şiş</b><span class="dots"></span><span class="pr">15,00 €</span>
-      <small>Malse kipspiesjes, gemarineerd en boven kolen gegrild</small></div></div><div class="mi"><div class="mi-row" style="width:100%">
-      <b>Kuzu Şiş</b><span class="dots"></span><span class="pr">20,00 €</span>
-      <small>Lamsspies van de grill, met rijst en salade</small></div></div><div class="mi"><div class="mi-row" style="width:100%">
-      <b>Mix Grill</b><span class="dots"></span><span class="pr">26,50 €</span>
-      <small>Adana, şiş en lamskotelet op één schaal — voor de grote honger</small></div></div>
+    <div class="mi">
+      <img class="mi-img" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Kebab_Gerashi.jpg/960px-Kebab_Gerashi.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt="Adana Kebap" onerror="this.remove()">
+      <div class="mi-body"><div class="mi-row">
+        <b>Adana Kebap</b><span class="dots"></span><span class="pr">16,50 €</span></div>
+        <small>Pittig gehakt van de houtskoolgrill, met bulgur en gegrilde groente</small></div></div><div class="mi">
+      <img class="mi-img" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Sultan_Kebab%2C_Sultan_Turkish_Restaurant%2C_Bussorah_Street_%28201928%29.jpg/960px-Sultan_Kebab%2C_Sultan_Turkish_Restaurant%2C_Bussorah_Street_%28201928%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt="Urfa Kebap" onerror="this.remove()">
+      <div class="mi-body"><div class="mi-row">
+        <b>Urfa Kebap</b><span class="dots"></span><span class="pr">16,50 €</span></div>
+        <small>Zoals Adana, maar mild — voor wie het zachter wil</small></div></div><div class="mi">
+      <img class="mi-img" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Skewered_Chicken_Thighs.jpg/960px-Skewered_Chicken_Thighs.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt="Tavuk Şiş" onerror="this.remove()">
+      <div class="mi-body"><div class="mi-row">
+        <b>Tavuk Şiş</b><span class="dots"></span><span class="pr">15,00 €</span></div>
+        <small>Malse kipspiesjes, gemarineerd en boven kolen gegrild</small></div></div><div class="mi">
+      <img class="mi-img" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Lamb_shish_kebab_-_Ankara.jpg/960px-Lamb_shish_kebab_-_Ankara.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt="Kuzu Şiş" onerror="this.remove()">
+      <div class="mi-body"><div class="mi-row">
+        <b>Kuzu Şiş</b><span class="dots"></span><span class="pr">20,00 €</span></div>
+        <small>Lamsspies van de grill, met rijst en salade</small></div></div><div class="mi">
+      <img class="mi-img" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Iraqi_Mixed_Grill_Platter_with_Traditional_Accompaniments.jpg/960px-Iraqi_Mixed_Grill_Platter_with_Traditional_Accompaniments.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt="Mix Grill" onerror="this.remove()">
+      <div class="mi-body"><div class="mi-row">
+        <b>Mix Grill</b><span class="dots"></span><span class="pr">26,50 €</span></div>
+        <small>Adana, şiş en lamskotelet op één schaal — voor de grote honger</small></div></div>
   </div><div class="menu-pane" id="pane-doner">
-    <div class="mi"><div class="mi-row" style="width:100%">
-      <b>Döner Kebap</b><span class="dots"></span><span class="pr">8,50 €</span>
-      <small>Kalfsvlees van het draaispit, in vers brood met salade en saus</small></div></div><div class="mi"><div class="mi-row" style="width:100%">
-      <b>Dürüm Döner</b><span class="dots"></span><span class="pr">9,50 €</span>
-      <small>Döner gerold in dun yufka-brood — ideaal voor onderweg</small></div></div><div class="mi"><div class="mi-row" style="width:100%">
-      <b>İskender</b><span class="dots"></span><span class="pr">18,00 €</span>
-      <small>Dönerplakken op broodblokjes, met tomatensaus, yoghurt en bruine boter</small></div></div><div class="mi"><div class="mi-row" style="width:100%">
-      <b>Tavuk Döner</b><span class="dots"></span><span class="pr">8,00 €</span>
-      <small>Kippendöner, gemarineerd en krokant</small></div></div>
+    <div class="mi">
+      <img class="mi-img" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Pita_giros.JPG/960px-Pita_giros.JPG?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt="Döner Kebap" onerror="this.remove()">
+      <div class="mi-body"><div class="mi-row">
+        <b>Döner Kebap</b><span class="dots"></span><span class="pr">8,50 €</span></div>
+        <small>Kalfsvlees van het draaispit, in vers brood met salade en saus</small></div></div><div class="mi">
+      <img class="mi-img" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/D%C3%BCr%C3%BCm_of_Ali_Baba_Tauberbischofsheim.jpg/960px-D%C3%BCr%C3%BCm_of_Ali_Baba_Tauberbischofsheim.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt="Dürüm Döner" onerror="this.remove()">
+      <div class="mi-body"><div class="mi-row">
+        <b>Dürüm Döner</b><span class="dots"></span><span class="pr">9,50 €</span></div>
+        <small>Döner gerold in dun yufka-brood — ideaal voor onderweg</small></div></div><div class="mi">
+      <img class="mi-img" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Iskender_kebab_on_plate.jpg/960px-Iskender_kebab_on_plate.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt="İskender" onerror="this.remove()">
+      <div class="mi-body"><div class="mi-row">
+        <b>İskender</b><span class="dots"></span><span class="pr">18,00 €</span></div>
+        <small>Dönerplakken op broodblokjes, met tomatensaus, yoghurt en bruine boter</small></div></div><div class="mi">
+      <img class="mi-img" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/D%C3%B6ner_Kebab%2C_Berlin%2C_2010_%2801%29.jpg/960px-D%C3%B6ner_Kebab%2C_Berlin%2C_2010_%2801%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt="Tavuk Döner" onerror="this.remove()">
+      <div class="mi-body"><div class="mi-row">
+        <b>Tavuk Döner</b><span class="dots"></span><span class="pr">8,00 €</span></div>
+        <small>Kippendöner, gemarineerd en krokant</small></div></div>
   </div><div class="menu-pane" id="pane-pide">
-    <div class="mi"><div class="mi-row" style="width:100%">
-      <b>Lahmacun</b><span class="dots"></span><span class="pr">7,00 €</span>
-      <small>Flinterdun deeg met gekruid gehakt — oprollen met salade</small></div></div><div class="mi"><div class="mi-row" style="width:100%">
-      <b>Kaşarlı Pide</b><span class="dots"></span><span class="pr">12,00 €</span>
-      <small>Pide met kaas uit de steenoven</small></div></div><div class="mi"><div class="mi-row" style="width:100%">
-      <b>Kıymalı Pide</b><span class="dots"></span><span class="pr">13,50 €</span>
-      <small>Pide met gehakt en ei</small></div></div>
+    <div class="mi">
+      <img class="mi-img" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Lahmacun.jpg/960px-Lahmacun.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt="Lahmacun" onerror="this.remove()">
+      <div class="mi-body"><div class="mi-row">
+        <b>Lahmacun</b><span class="dots"></span><span class="pr">7,00 €</span></div>
+        <small>Flinterdun deeg met gekruid gehakt — oprollen met salade</small></div></div><div class="mi">
+      <img class="mi-img" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/2019-07-27_Turkish_pide_with_cheese_at_Istanbul_restaurant.jpg/960px-2019-07-27_Turkish_pide_with_cheese_at_Istanbul_restaurant.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt="Kaşarlı Pide" onerror="this.remove()">
+      <div class="mi-body"><div class="mi-row">
+        <b>Kaşarlı Pide</b><span class="dots"></span><span class="pr">12,00 €</span></div>
+        <small>Pide met kaas uit de steenoven</small></div></div><div class="mi">
+      <img class="mi-img" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Pastirmali_pide.jpg/960px-Pastirmali_pide.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt="Kıymalı Pide" onerror="this.remove()">
+      <div class="mi-body"><div class="mi-row">
+        <b>Kıymalı Pide</b><span class="dots"></span><span class="pr">13,50 €</span></div>
+        <small>Pide met gehakt en ei</small></div></div>
   </div><div class="menu-pane" id="pane-meze">
-    <div class="mi"><div class="mi-row" style="width:100%">
-      <b>Mercimek Çorbası</b><span class="dots"></span><span class="pr">6,50 €</span>
-      <small>Rode linzensoep met citroen — de klassieker</small></div></div><div class="mi"><div class="mi-row" style="width:100%">
-      <b>Sigara Böreği</b><span class="dots"></span><span class="pr">8,00 €</span>
-      <small>Krokante deegrolletjes met schapenkaas</small></div></div><div class="mi"><div class="mi-row" style="width:100%">
-      <b>Humus</b><span class="dots"></span><span class="pr">7,50 €</span>
-      <small>Kikkererwtenpuree met sesam en olijfolie</small></div></div><div class="mi"><div class="mi-row" style="width:100%">
-      <b>Haydari</b><span class="dots"></span><span class="pr">7,00 €</span>
-      <small>Romige yoghurtdip met knoflook en dille</small></div></div><div class="mi"><div class="mi-row" style="width:100%">
-      <b>Çoban Salata</b><span class="dots"></span><span class="pr">9,00 €</span>
-      <small>Herderssalade met tomaat, komkommer en schapenkaas</small></div></div>
+    <div class="mi">
+      <img class="mi-img" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Lentil_soup_done.jpg/960px-Lentil_soup_done.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt="Mercimek Çorbası" onerror="this.remove()">
+      <div class="mi-body"><div class="mi-row">
+        <b>Mercimek Çorbası</b><span class="dots"></span><span class="pr">6,50 €</span></div>
+        <small>Rode linzensoep met citroen — de klassieker</small></div></div><div class="mi">
+      <img class="mi-img" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Various_b%C3%B6reks_in_Turkey.jpg/960px-Various_b%C3%B6reks_in_Turkey.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt="Sigara Böreği" onerror="this.remove()">
+      <div class="mi-body"><div class="mi-row">
+        <b>Sigara Böreği</b><span class="dots"></span><span class="pr">8,00 €</span></div>
+        <small>Krokante deegrolletjes met schapenkaas</small></div></div><div class="mi">
+      <img class="mi-img" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Hummus_with_Olive_Oil.jpg/960px-Hummus_with_Olive_Oil.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt="Humus" onerror="this.remove()">
+      <div class="mi-body"><div class="mi-row">
+        <b>Humus</b><span class="dots"></span><span class="pr">7,50 €</span></div>
+        <small>Kikkererwtenpuree met sesam en olijfolie</small></div></div><div class="mi">
+      <img class="mi-img" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Cold_platter_from_Turkey.jpg/960px-Cold_platter_from_Turkey.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt="Haydari" onerror="this.remove()">
+      <div class="mi-body"><div class="mi-row">
+        <b>Haydari</b><span class="dots"></span><span class="pr">7,00 €</span></div>
+        <small>Romige yoghurtdip met knoflook en dille</small></div></div><div class="mi">
+      <img class="mi-img" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Greek_Salad_Choriatiki.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail_unscaled" alt="Çoban Salata" onerror="this.remove()">
+      <div class="mi-body"><div class="mi-row">
+        <b>Çoban Salata</b><span class="dots"></span><span class="pr">9,00 €</span></div>
+        <small>Herderssalade met tomaat, komkommer en schapenkaas</small></div></div>
   </div><div class="menu-pane" id="pane-dessert">
-    <div class="mi"><div class="mi-row" style="width:100%">
-      <b>Künefe</b><span class="dots"></span><span class="pr">10,50 €</span>
-      <small>Warm engelenhaar met kaasvulling en siroop — vers uit de oven</small></div></div><div class="mi"><div class="mi-row" style="width:100%">
-      <b>Baklava</b><span class="dots"></span><span class="pr">7,50 €</span>
-      <small>Huisgemaakte baklava met pistache</small></div></div><div class="mi"><div class="mi-row" style="width:100%">
-      <b>Sütlaç</b><span class="dots"></span><span class="pr">6,00 €</span>
-      <small>Rijstpudding uit de oven, koud geserveerd</small></div></div>
+    <div class="mi">
+      <img class="mi-img" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/K%C3%BCnefe_and_Coffee.JPG/960px-K%C3%BCnefe_and_Coffee.JPG?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt="Künefe" onerror="this.remove()">
+      <div class="mi-body"><div class="mi-row">
+        <b>Künefe</b><span class="dots"></span><span class="pr">10,50 €</span></div>
+        <small>Warm engelenhaar met kaasvulling en siroop — vers uit de oven</small></div></div><div class="mi">
+      <img class="mi-img" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Baklava%2C_Istanbul_%282251578144%29.jpg/960px-Baklava%2C_Istanbul_%282251578144%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt="Baklava" onerror="this.remove()">
+      <div class="mi-body"><div class="mi-row">
+        <b>Baklava</b><span class="dots"></span><span class="pr">7,50 €</span></div>
+        <small>Huisgemaakte baklava met pistache</small></div></div><div class="mi">
+      <img class="mi-img" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Baked_Rice_Pudding_11.06.2025.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail_unscaled" alt="Sütlaç" onerror="this.remove()">
+      <div class="mi-body"><div class="mi-row">
+        <b>Sütlaç</b><span class="dots"></span><span class="pr">6,00 €</span></div>
+        <small>Rijstpudding uit de oven, koud geserveerd</small></div></div>
   </div><div class="menu-pane" id="pane-drinks">
-    <div class="mi"><div class="mi-row" style="width:100%">
-      <b>Ayran</b><span class="dots"></span><span class="pr">3,00 €</span>
-      <small>Huisgemaakte yoghurtdrank</small></div></div><div class="mi"><div class="mi-row" style="width:100%">
-      <b>Çay</b><span class="dots"></span><span class="pr">2,00 €</span>
-      <small>Zwarte thee in het originele glas</small></div></div><div class="mi"><div class="mi-row" style="width:100%">
-      <b>Türk Kahvesi</b><span class="dots"></span><span class="pr">4,00 €</span>
-      <small>Turkse mokka, desgewenst met suiker</small></div></div>
+    <div class="mi">
+      <img class="mi-img" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Ayran_in_a_beer_glass.jpg/960px-Ayran_in_a_beer_glass.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt="Ayran" onerror="this.remove()">
+      <div class="mi-body"><div class="mi-row">
+        <b>Ayran</b><span class="dots"></span><span class="pr">3,00 €</span></div>
+        <small>Huisgemaakte yoghurtdrank</small></div></div><div class="mi">
+      <img class="mi-img" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Glass_tea_cup.jpg/960px-Glass_tea_cup.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt="Çay" onerror="this.remove()">
+      <div class="mi-body"><div class="mi-row">
+        <b>Çay</b><span class="dots"></span><span class="pr">2,00 €</span></div>
+        <small>Zwarte thee in het originele glas</small></div></div><div class="mi">
+      <img class="mi-img" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Bak%C4%B1rcezve-fincan.jpg/960px-Bak%C4%B1rcezve-fincan.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt="Türk Kahvesi" onerror="this.remove()">
+      <div class="mi-body"><div class="mi-row">
+        <b>Türk Kahvesi</b><span class="dots"></span><span class="pr">4,00 €</span></div>
+        <small>Turkse mokka, desgewenst met suiker</small></div></div>
   </div>
   <p class="menu-note">Voorbeeldkaart — actuele prijzen hoort u in de zaak.</p>
 </div></section>
